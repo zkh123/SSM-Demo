@@ -1,7 +1,7 @@
-package com.ssm.demo.Controllers;
+package com.ssm.demo.controllers;
 
-import com.ssm.demo.Entity.Student;
-import com.ssm.demo.Service.StudentService;
+import com.ssm.demo.entity.Student;
+import com.ssm.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

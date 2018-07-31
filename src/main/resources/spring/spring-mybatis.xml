@@ -21,12 +21,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis-setting.xml" />
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath:mapper/StudentMapper.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
     </bean>
 
     <!-- 配置mybatis mapper接口 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.ssm.demo.Dao"/>
+        <property name="basePackage" value="com.ssm.demo.dao"/>
     </bean>
 
     <!-- 配置事务管理器 -->

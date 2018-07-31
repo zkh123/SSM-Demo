@@ -1,6 +1,6 @@
-package com.ssm.demo.Dao;
+package com.ssm.demo.dao;
 
-import com.ssm.demo.Entity.Student;
+import com.ssm.demo.entity.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

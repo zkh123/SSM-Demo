@@ -1,5 +1,5 @@
-import com.ssm.demo.Entity.Student;
-import com.ssm.demo.Service.StudentService;
+import com.ssm.demo.entity.Student;
+import com.ssm.demo.service.StudentService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

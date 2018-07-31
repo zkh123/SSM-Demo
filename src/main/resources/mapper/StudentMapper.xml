@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ssm.demo.Dao.StudentMapper">
+<mapper namespace="com.ssm.demo.dao.StudentMapper">
 
-    <resultMap id="BaseResultMap" type="com.ssm.demo.Entity.Student">
+    <resultMap id="BaseResultMap" type="com.ssm.demo.entity.Student">
         <id column="Uid" jdbcType="BINARY" property="uid" />
         <result column="Name" jdbcType="VARCHAR" property="name" />
         <result column="Age" jdbcType="INTEGER" property="age" />
@@ -20,7 +20,7 @@
         where Uid = #{uid,jdbcType=BINARY}
     </select>
 
-    <select id="selectByCondition" parameterType="com.ssm.demo.Entity.Student" resultMap="BaseResultMap">
+    <select id="selectByCondition" parameterType="com.ssm.demo.entity.Student" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
         from student
@@ -46,14 +46,14 @@
         where Uid = #{uid,jdbcType=BINARY}
     </delete>
 
-    <insert id="insert" parameterType="com.ssm.demo.Entity.Student">
+    <insert id="insert" parameterType="com.ssm.demo.entity.Student">
         insert into student (Uid, Name, Age,
         ClassId)
         values (#{uid,jdbcType=BINARY}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
         #{classid,jdbcType=INTEGER})
     </insert>
 
-    <insert id="insertSelective" parameterType="com.ssm.demo.Entity.Student">
+    <insert id="insertSelective" parameterType="com.ssm.demo.entity.Student">
         insert into student
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="uid != null">
@@ -85,7 +85,7 @@
         </trim>
     </insert>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.ssm.demo.Entity.Student">
+    <update id="updateByPrimaryKeySelective" parameterType="com.ssm.demo.entity.Student">
         update student
         <set>
             <if test="name != null">
@@ -101,7 +101,7 @@
         where Uid = #{uid,jdbcType=BINARY}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.ssm.demo.Entity.Student">
+    <update id="updateByPrimaryKey" parameterType="com.ssm.demo.entity.Student">
         update student
         set Name = #{name,jdbcType=VARCHAR},
         Age = #{age,jdbcType=INTEGER},

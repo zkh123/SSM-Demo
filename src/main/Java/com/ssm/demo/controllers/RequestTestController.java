@@ -1,4 +1,4 @@
-package com.ssm.demo.Controllers;
+package com.ssm.demo.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

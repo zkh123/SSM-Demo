@@ -8,7 +8,7 @@
     <context:annotation-config />
 
     <!-- 配置component所在的包，自动加载需要管理的Bean -->
-    <context:component-scan base-package="com.ssm.demo.Service,com.ssm.demo.Dao" />
+    <context:component-scan base-package="com.ssm.demo.service,com.ssm.demo.dao" />
 
     <!--加载properties配置文件-->
     <bean id="configProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -19,6 +19,7 @@
         </property>
     </bean>
 
-    <!--加载dao层的配置-->
+    <!--加载配置-->
+    <import resource="spring-shiro.xml" />
     <import resource="spring-mybatis.xml" />
 </beans>

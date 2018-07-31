@@ -1,7 +1,7 @@
-package com.ssm.demo.Service;
+package com.ssm.demo.service;
 
-import com.ssm.demo.Dao.StudentMapper;
-import com.ssm.demo.Entity.Student;
+import com.ssm.demo.dao.StudentMapper;
+import com.ssm.demo.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

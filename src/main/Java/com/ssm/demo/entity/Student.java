@@ -1,5 +1,8 @@
-package com.ssm.demo.Entity;
+package com.ssm.demo.entity;
 
+import org.apache.ibatis.type.Alias;
+
+@Alias("student")
 public class Student {
     private byte[] uid;
 
