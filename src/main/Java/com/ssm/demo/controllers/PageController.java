@@ -10,9 +10,9 @@ public class PageController {
      * 跳转到页面
      * @return
      */
-    @RequestMapping("/page")
+    @RequestMapping("/toLogin")
     private String toPage(){
-        return "error";
+        return "login";
     }
 
     @RequestMapping(value = "/home")
