@@ -22,7 +22,7 @@
     </bean>
 
     <!--统一异常处理-->
-    <bean id="exceptionHandler" class="com.ssm.demo.interceptor.MyMappingExceptionResolver"/>
+    <!--<bean id="exceptionHandler" class="com.ssm.demo.interceptor.MyMappingExceptionResolver"/>-->
 
     <!--静态资源-->
     <mvc:resources mapping="/html/**" location="/html/" />

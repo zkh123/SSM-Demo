@@ -3,26 +3,26 @@ package com.ssm.demo.controllers;
 import com.alibaba.fastjson.JSONObject;
 import com.ssm.demo.entity.Test;
 import com.ssm.demo.entity.User;
+import com.ssm.demo.exception.CustomException;
+import com.ssm.demo.service.TestService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.*;
 
 @Controller
 public class TestController {
     public static Logger logger = Logger.getLogger(TestController.class);
+
+    @Autowired
+    private TestService testService;
 
     @RequestMapping(value = "/test")
     public String toTestPage(){
@@ -147,6 +147,28 @@ public class TestController {
         long  endTime=System.currentTimeMillis();
         System.out.println("方法三的运行时间："+String.valueOf(endTime-startTime)+"ms");
         return "redirect:test";
+    }
+
+
+    @RequestMapping(value = "/exception")
+    @ResponseBody
+    public JSONObject testException(){
+        JSONObject response = new JSONObject();
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = testService.doException();
+            response.put("code",1);
+            response.put("msg","");
+        } catch (Exception e) {
+            response.put("code",0);
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            response.put("msg",sw.toString());
+            e.printStackTrace();
+        }
+        response.put("content",jsonObject);
+        return response;
     }
 
 

@@ -20,6 +20,7 @@
     </bean>
 
     <!--加载配置-->
+    <import resource="spring-restTemplate.xml"/>
     <import resource="spring-shiro.xml" />
     <import resource="spring-mybatis.xml" />
 </beans>
