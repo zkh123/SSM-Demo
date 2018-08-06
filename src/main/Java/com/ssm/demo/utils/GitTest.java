@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class GitTest {
-    public static String remotePath = "http://lijun@git.ppdaicorp.com/risk/PreLoanAuditJob.git";//远程库路径
+    public static String remotePath = "http://lijun@git.pp--daicorp.com/risk/PreLoanAuditJob.git";//远程库路径
     public static String localPath = "D:\\project\\";//下载已有仓库到本地路径
     public static String initPath = "D:\\test\\";//本地路径新建
 
@@ -35,7 +35,7 @@ public class GitTest {
     public static void testClone() throws IOException, GitAPIException {
         //设置远程服务器上的用户名和密码
         UsernamePasswordCredentialsProvider usernamePasswordCredentialsProvider =new
-                UsernamePasswordCredentialsProvider("huanglijun@ppdai.com","Hljpp414");
+                UsernamePasswordCredentialsProvider("hu--angli--jun@p---pd--ai.com","Hljpp414");
 
         //克隆代码库命令
         CloneCommand cloneCommand = Git.cloneRepository();
